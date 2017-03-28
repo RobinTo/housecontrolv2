@@ -1,0 +1,21 @@
+.main {
+  background-color: #673AB7;
+  padding: 12px;
+  display: block;
+  margin: 0;
+  border-bottom: 1px solid black;
+  li {
+    margin: 12px;
+    display: inline-block;
+  }
+
+  a {
+    color: white;
+      text-decoration: none;
+
+    &:visited{
+      color: white;
+      text-decoration: none;
+    }
+  }
+}
