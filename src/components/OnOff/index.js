@@ -1,11 +1,13 @@
 import React from 'react';
 
+import styles from './style.scss';
+
 const OnOff = props => (
-  <div>
-    <button onClick={() => { props.fn(props.on); }}>
+  <div className={styles.main}>
+    <button className={styles.button1} onClick={() => { props.fn(props.on); }}>
       On
     </button>
-    <button onClick={() => { props.fn(props.off); }}>
+    <button className={styles.button2} onClick={() => { props.fn(props.off); }}>
       Off
     </button>
   </div>

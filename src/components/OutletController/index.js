@@ -6,6 +6,8 @@ import { postOutletCode } from '../../redux/reducers/HouseControlReducer';
 
 import OnOff from '../OnOff';
 
+import styles from './style.scss';
+
 function mapStateToProps(state) {
   return {
     outlets: state.housecontrol.outlets,
@@ -28,10 +30,17 @@ class OutletController extends React.Component {
   }
 
   render() {
-    const outletComponents = this.props.outlets.map(outlet => <OnOff key={outlet.on} fn={this.outletOnClick} {...outlet} />);
+    const outletComponents = this.props.outlets.map((outlet) => {
+      return (
+        <div key={outlet.on}>
+          <span className={styles.outletName}>{outlet.name}</span>
+          <OnOff fn={this.outletOnClick} {...outlet} />
+        </div>
+      );
+    });
 
     return (
-      <div>
+      <div className={styles.main}>
         { outletComponents }
       </div>
     );
@@ -39,7 +48,7 @@ class OutletController extends React.Component {
 }
 
 OutletController.propTypes = {
-  outlets: React.PropTypes.arrayOf(React.PropTypes.objectOf(React.PropTypes.number)).isRequired,
+  outlets: React.PropTypes.arrayOf(React.PropTypes.object).isRequired,
   postOutletCode: React.PropTypes.func.isRequired,
 };
 

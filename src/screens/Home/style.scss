@@ -1,0 +1,35 @@
+.main {
+  display: flex;
+  height: 100%;
+  justify-content: space-around;
+  .leftBelt {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    min-width: 250px;
+    background: rgba(15, 128, 255, 0.5);
+  }
+
+  .centerBelt {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    min-width: 200px;
+  }
+
+  .rightBelt {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    min-width: 200px;
+  }
+
+  .card{
+    min-width: 200px;
+    min-height: 200px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+}

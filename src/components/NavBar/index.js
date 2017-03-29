@@ -3,10 +3,38 @@ import { Link } from 'react-router-dom';
 
 import styles from './style.scss';
 
-export default () => (
-  <ul className={styles.main} >
-    <li><Link to='/'>Home</Link></li>
-    <li><Link to='/info'>Info</Link></li>
-    <li><Link to='/about'>About</Link></li>
-  </ul>
-);
+export default class NavBar extends React.Component {
+
+  constructor() {
+    super();
+    this.state = {
+      expanded: false,
+    };
+
+    this._toggle = this._toggle.bind(this);
+  }
+
+  _toggle() {
+    this.setState({
+      expanded: !this.state.expanded,
+    });
+  }
+
+  render() {
+    return (
+      <div className={styles.main + (!this.state.expanded ? '' : ` ${styles.expanded}`)} >
+        <button onClick={this._toggle} className={styles.expand + (!this.state.expanded ? '' : ` ${styles.hidden}`)}>
+          MENU
+        </button>
+        <div className={styles.menu + (this.state.expanded ? '' : ` ${styles.hidden}`)}>
+          <ul>
+            <li><Link to='/'>Home</Link></li>
+            <li><Link to='/info'>Info</Link></li>
+            <li><Link to='/about'>About</Link></li>
+            <li><button onClick={this._toggle}>Close</button></li>
+          </ul>
+        </div>
+      </div>
+    )
+  }
+}

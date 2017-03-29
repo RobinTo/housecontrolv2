@@ -5,10 +5,12 @@ import store from './redux/store';
 import Routes from './routes/client';
 import NavBar from './components/NavBar';
 
+import styles from './AppStyle.scss';
+
 const myStore = store();
 export default () => (
   <Provider store={myStore}>
-    <div>
+    <div className={styles.main}>
       <NavBar />
       <div>
         <Routes />

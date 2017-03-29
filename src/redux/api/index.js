@@ -7,3 +7,6 @@ export const postOutletCode = code => fetch(`/api/rfoutlet/${code}`, {
 
 export const getBussTimes = () => fetch('/api/ruter')
   .then(response => response.json());
+
+export const getWeather = () => fetch('/api/weather?city=Lorenskog')
+  .then(response => response.json());
