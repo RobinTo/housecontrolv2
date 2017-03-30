@@ -5,22 +5,26 @@
 
   &.expanded {
     background: rgba(0, 0, 0, 0.5);
-    top: 0;
-    left: 0;
-    right: 0;
+    width: 60px;
+    border-radius: 4px;
+    padding: 4px;
   }
   .hidden {
     display: none;
   }
 
+  ul {
+    margin: 0;
+    padding: 0;
+  }
   li {
-    margin: 12px;
+    margin: 4px 0;
     display: inline-block;
   }
 
   a {
     color: white;
-      text-decoration: none;
+    text-decoration: none;
 
     &:visited{
       color: white;
@@ -36,5 +40,13 @@
     border: none;
     border-radius: 40px;
     text-align: center;
+  }
+
+  button.close {
+    border: none;
+    padding: 0;
+    background: transparent;
+    color: white;
+    font-family: roboto;
   }
 }

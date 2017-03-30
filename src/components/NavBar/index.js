@@ -28,13 +28,14 @@ export default class NavBar extends React.Component {
         </button>
         <div className={styles.menu + (this.state.expanded ? '' : ` ${styles.hidden}`)}>
           <ul>
-            <li><Link to='/'>Home</Link></li>
-            <li><Link to='/info'>Info</Link></li>
-            <li><Link to='/about'>About</Link></li>
-            <li><button onClick={this._toggle}>Close</button></li>
+            <li><Link to='/'>Hjem</Link></li>
+            <li><Link to='/video'>Video</Link></li>
+            <li><Link to='/images'>Bilder</Link></li>
+            <li><Link to='/controls'>Kontroll</Link></li>
+            <li><button className={styles.close} onClick={this._toggle}>Close</button></li>
           </ul>
         </div>
       </div>
-    )
+    );
   }
 }

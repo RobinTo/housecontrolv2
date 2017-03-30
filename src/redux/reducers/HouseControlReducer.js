@@ -5,6 +5,12 @@ export const actionTypes = {
   UPDATE_WEATHER: 'UPDATE_WEATHER', // Saga action to update UPDATE_WEATHER
   UPDATE_WEATHER_SUCCESS: 'UPDATE_WEATHER_SUCCESS',
   UPDATE_WEATHER_FAIL: 'UPDATE_WEATHER_FAIL',
+  UPDATE_BUSS_TIMES: 'UPDATE_BUSS_TIMES', // Saga action to update buss times
+  UPDATE_BUSS_TIMES_SUCCESS: 'UPDATE_BUSS_TIMES_SUCCESS',
+  UPDATE_BUSS_TIMES_FAIL: 'UPDATE_BUSS_TIMES_FAIL',
+  GET_IMAGE_LIST: 'GET_IMAGE_LIST',
+  GET_IMAGE_LIST_SUCCESS: 'GET_IMAGE_LIST_SUCCESS',
+  GET_IMAGE_LIST_FAIL: 'GET_IMAGE_LIST_FAIL',
 };
 
 const defaultState = {
@@ -26,6 +32,8 @@ const defaultState = {
     },
   ],
   weather: null,
+  bussTimes: null,
+  imageList: [],
 };
 
 export default(state = defaultState, action) => {
@@ -33,6 +41,14 @@ export default(state = defaultState, action) => {
     case actionTypes.UPDATE_WEATHER_SUCCESS:
       return Object.assign({}, state, {
         weather: action.weather,
+      });
+    case actionTypes.UPDATE_BUSS_TIMES_SUCCESS:
+      return Object.assign({}, state, {
+        bussTimes: action.bussTimes,
+      });
+    case actionTypes.GET_IMAGE_LIST_SUCCESS:
+      return Object.assign({}, state, {
+        imageList: action.imageList,
       });
     default:
       return state;
@@ -42,3 +58,5 @@ export default(state = defaultState, action) => {
 // Action creators
 export const postOutletCode = code => ({ type: actionTypes.POST_RFOUTLET_CODE, code });
 export const updateWeather = () => ({ type: actionTypes.UPDATE_WEATHER });
+export const updateBussTimes = () => ({ type: actionTypes.UPDATE_BUSS_TIMES });
+export const getImageList = () => ({ type: actionTypes.GET_IMAGE_LIST });

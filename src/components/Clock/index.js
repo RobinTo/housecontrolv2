@@ -27,9 +27,13 @@ export default class Clock extends React.Component {
   }
 
   render() {
+    let hours = this.state.clock.getHours();
+    hours = hours < 10 ? `0${hours}` : hours;
+    let minutes = this.state.clock.getMinutes();
+    minutes = minutes < 10 ? `0${minutes}` : minutes;
     return (
       <div className={styles.main}>
-        {this.state.clock.getHours()}:{this.state.clock.getMinutes()}
+        {hours}:{minutes}
       </div>
     );
   }

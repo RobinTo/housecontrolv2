@@ -9,7 +9,8 @@ if (global) {
 export default () => (
   <Switch>
     <Route exact path='/' component={props => <AsyncRoute props={props} loadingPromise={System.import('../screens/Home')} />} />
-    <Route path='/info' component={props => <AsyncRoute props={props} loadingPromise={System.import('../screens/Info')} />} />
-    <Route path='/about' component={props => <AsyncRoute props={props} loadingPromise={System.import('../screens/About')} />} />
+    <Route path='/video' component={props => <AsyncRoute props={props} loadingPromise={System.import('../screens/Video')} />} />
+    <Route path='/images' component={props => <AsyncRoute props={props} loadingPromise={System.import('../screens/ImageSlider')} />} />
+    <Route path='/controls' component={props => <AsyncRoute props={props} loadingPromise={System.import('../screens/Controls')} />} />
   </Switch>
 );

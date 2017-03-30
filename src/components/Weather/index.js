@@ -48,7 +48,7 @@ class Weather extends React.Component {
     return (
       <button className={styles.main} onClick={this._onClick}>
         <div className={styles.infoContainer}>
-          <span className={styles.temp}>{Math.round(this.props.weather.main.temp)}</span>
+          <span className={styles.temp}>{Math.round(this.props.weather.main.temp)}&deg;</span>
           <i className={`${styles.icon} wi ${weatherIcon}`} />
         </div>
         <div className={styles.desc}>{weatherDesc}</div>

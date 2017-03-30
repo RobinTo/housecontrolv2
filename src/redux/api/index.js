@@ -10,3 +10,6 @@ export const getBussTimes = () => fetch('/api/ruter')
 
 export const getWeather = () => fetch('/api/weather?city=Lorenskog')
   .then(response => response.json());
+
+export const getImageList = () => fetch('/api/imagelist')
+  .then(response => response.json());

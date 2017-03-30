@@ -1,5 +1,6 @@
 node_modules
 build
+sliderimages
 npm_debug.log*
 .idea
 *.iml

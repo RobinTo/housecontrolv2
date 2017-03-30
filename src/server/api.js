@@ -1,5 +1,7 @@
 import express from 'express';
 import request from 'request';
+import fs from 'fs';
+import path from 'path';
 import { exec } from 'child_process';
 
 import secrets from './secrets';
@@ -51,6 +53,17 @@ router.post('/shutdown', (req, res) => {
     }
     console.log(`stdout: ${stdout}`);
     console.log(`stderr: ${stderr}`);
+  });
+});
+
+router.get('/imagelist', (req, res) => {
+  fs.readdir('./static/sliderimages', (err, files) => {
+    if (err) {
+      res.json({ error: err.message });
+    } else {
+      const imageFiles = files.filter(f => /(\.png$)|(\.jpg$)|(\.jpeg$)/i.test(f));
+      res.json(imageFiles);
+    }
   });
 });
 

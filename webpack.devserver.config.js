@@ -4,7 +4,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const extractSass = new ExtractTextPlugin({
   filename: "[name]-devserver.css",
-  allChunks: true
+  allChunks: true,
 });
 
 module.exports = {
@@ -18,7 +18,7 @@ module.exports = {
     path: path.join(__dirname, '/build'),
     filename: 'devserverbundle.js',
     publicPath: '/build/',
-    libraryTarget: 'commonjs2'
+    libraryTarget: 'commonjs2',
   },
   resolve: {
     extensions: ['.js', '.jsx', '.json']
@@ -26,14 +26,14 @@ module.exports = {
   stats: {
     colors: true,
     reasons: true,
-    chunks: true
+    chunks: true,
   },
   module: {
     rules: [
       {
         exclude: path.resolve(__dirname, 'node_modules'),
         test: /\.js$/,
-        loader: 'babel-loader'
+        loader: 'babel-loader',
       }, {
         exclude: path.resolve(__dirname, 'node_modules'),
         test: /\.scss$/,
@@ -43,10 +43,10 @@ module.exports = {
               loader: "css-loader",
               options: {
                 modules: true,
-                localIdentName: '[local]--[hash:base64:5]'
+                localIdentName: '[local]--[hash:base64:5]',
               }
             }, {
-              loader: "sass-loader"
+              loader: "sass-loader",
             }
           ]
         })
@@ -54,6 +54,6 @@ module.exports = {
     ]
   },
   plugins: [
-    extractSass
-  ]
+    extractSass,
+  ],
 };
