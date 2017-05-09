@@ -34,7 +34,7 @@ function createBussComponents(bussTimes) {
     }
     return (
       <div className={styles.main} key={journey.MonitoredVehicleJourney.VehicleJourneyName}>
-        <div className={styles.name}>{monitor.DestinationName}:</div> <div className={styles.time}>{dateString}</div>
+        <div className={styles.name}>{monitor.PublishedLineName} {monitor.DestinationName}:</div> <div className={styles.time}>{dateString}</div>
       </div>
     );
   });
